@@ -1,1 +1,1 @@
-# weatherApp.js
+# weatherApp
