@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react'
 import imageBar from '../images/kate-townsend.jpg';
-// import { Link } from 'react-router-dom';
-
-    const Businesses = ({ weatherInfos }) => { 
-    
-    return(
-        <div className="row" key={weatherInfos.Id}>
+import { Link } from "react-router-dom";
+export class Businesses extends Component {
+    render() {
+        const Data = this.props.cityInfos;
+       
+        return (
+            <div className="row" key={Data.Id}>
         
-        {weatherInfos.map(weatherInfo=>
+        {Data.map(weatherInfo=>
             <div key={weatherInfo.name}>
             <span>
             <h1>Businesses found in {weatherInfo.name} </h1>
@@ -27,13 +28,14 @@ import imageBar from '../images/kate-townsend.jpg';
                 
                 </ul>
                 <button className="btn btn-primary">
-                Back to Home
+                <Link to='/weather'>Back to Home </Link>
                  </button>
             </div>
             
             )}
         </div>
-    )
+        )
+    }
 }
 
-export default Businesses;
+export default Businesses

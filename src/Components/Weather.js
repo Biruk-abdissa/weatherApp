@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
-// import Businesses from './Businesses';
-// import { Link } from "react-router-dom";
+import Search from './Search';
+import { Link } from "react-router-dom";
+
 class Weather extends Component{
   
- 
-     render(){
-        const {weatherInfos} = this.props;
+      render(){
+      const cityInfos = this.props.cityInfos;
         return(
-            <div className="row" >
-            {weatherInfos.map(weatherInfo=>
+          <div>
+          <Search handleChange={this.handleChange}/>
+          <div className="row" >
+            {cityInfos.map(weatherInfo=>
             <div key={weatherInfo.name}>
               <div className="card text-center ">
             <div className="card-title">
@@ -23,16 +25,20 @@ class Weather extends Component{
               <li className="">Description:  {weatherInfo.description}</li>
               </ul>
                 <div>
-                <a href="/businesses/" className="btn btn-primary" 
-                target="_blank"> 
-                See Businesses 
-                </a>
+               
+                <Link 
+                to={'/businesses' 
+                 }
+              className="btn btn-primary">
+            See Businesses 
+            </Link>
                 
               </div>
                 </div>
             </div>
             </div>
             )}
+            </div>
             </div>
             );
         }

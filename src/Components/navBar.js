@@ -1,41 +1,25 @@
-import React, {Component} from 'react';
-
-class NavBar extends Component{
-    state = {
-        search:"",
-        
-       };
-       
-     
- handleSubmit = (event) => {
-   event.preventDefault();
+import React, { Component } from 'react'
+import {Link} from "react-router-dom"
+class navBar extends Component {
     
-   this.props.handleChange(this.state.search)
-   console.log(this.state)
-   this.setState({search:""})
-      
-     }  
-
-    render(){
-        return(
-            <div className="nav-bar">
-            <nav className="navbar navbar-light bg-light">
-                <form className="form-inline" onSubmit={this.handleSubmit}>
-                    <input 
-                    className="form-control mr-sm-2" 
-                    type="text" 
-                    placeholder="Search City" 
-                    aria-label="Search"
-                    value={this.state.search}
-                    onChange={(e)=>{this.setState({search:e.target.value})}}
-                    required />
-                    <button 
-                    className="btn btn-outline-success my-2 my-sm-0" 
-                    type="submit">Get Weather</button>
-                </form>
-            </nav>
+     render(){
+    return (
+        
+        <nav className="navbar navbar-expand-lg navbar-light bg-1ight">
+        <Link to='/' className="navbar-brand">
+            <h2>WeatherApp</h2>
+            </Link>
+            <div className="collapse navbar-collapse show ml-sm-5">
+            <ul className="navbar-nav">
+            <li className="navbar-item">
+            <Link to='/' className="nav-link">
+            Home
+            </Link>
+            </li>
+            </ul>
             </div>
-        );
-    }
+          </nav>
+    )
 }
-export default NavBar;
+}
+export default navBar

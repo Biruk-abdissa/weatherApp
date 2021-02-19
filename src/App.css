@@ -11,6 +11,16 @@
   font-size:30px;
   margin-bottom: 50px;
 }
+.bg-image{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./images/aude-andre.jpg');
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  min-height: calc(100vh - 76px);
+}
+.header-color{
+color: white;
+}
 
 .row{
   display: flex;
