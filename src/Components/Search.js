@@ -7,14 +7,14 @@ export default class Search extends Component {
    };
    
  
-handleSubmit = (event) => {
-event.preventDefault();
+    handleSubmit = (event) => {
+    event.preventDefault();
 
-this.props.handleChange(this.state.search)
-console.log(this.state)
-this.setState({search:""})
-  
- }  
+    this.props.handleChange(this.state.search)
+    // console.log(this.state)
+    this.setState({search:""})
+      
+    }  
   render() {
     
     return (

@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
 import Search from './Search';
 import { Link } from "react-router-dom";
+// import axios from 'axios';
 
 class Weather extends Component{
-  
+    
       render(){
       const cityInfos = this.props.cityInfos;
+      
+      
         return(
           <div>
-          <Search handleChange={this.handleChange}/>
+          <Search handleChange={this.props.handleChange}/>
           <div className="row" >
             {cityInfos.map(weatherInfo=>
             <div key={weatherInfo.name}>
@@ -27,8 +30,7 @@ class Weather extends Component{
                 <div>
                
                 <Link 
-                to={'/businesses' 
-                 }
+                to={`/businesses/${weatherInfo.name}`}
               className="btn btn-primary">
             See Businesses 
             </Link>

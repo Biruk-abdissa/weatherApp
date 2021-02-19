@@ -4,6 +4,7 @@ import Default from "./pages/Default";
 import NavBar from './Components/navBar';
 import Weather from './Components/Weather';
 import Businesses from './Components/Businesses';
+// import Search from './Components/Search';
 import {
   BrowserRouter as Router,
   Switch,
@@ -79,11 +80,11 @@ class App extends Component {
     <Router>
         <main>
           {/* navbar */}
-          <NavBar handleChange= {this.handleChange}/>
+          <NavBar />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/weather" exact render={props => <Weather cityInfos={this.state.cityInfos}{...props}/>} />
-            <Route path="/businesses" render={props => <Businesses cityInfos={this.state.cityInfos}{...props}/>} />
+            <Route path="/weather" exact render={props => <Weather handleChange={this.handleChange} cityInfos={this.state.cityInfos}{...props}/>} />
+            <Route path="/businesses/:name" render={props => <Businesses cityInfos={this.state.cityInfos}{...props}/>} />
             <Route component={Default} />
           </Switch>
         </main>

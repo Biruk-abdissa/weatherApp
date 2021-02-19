@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import imageBar from '../images/kate-townsend.jpg';
 import { Link } from "react-router-dom";
 export class Businesses extends Component {
+    
     render() {
-        const Data = this.props.cityInfos;
-       
+        let Data = this.props.cityInfos;
+        const name = this.props.match.params.name;
+        Data = Data.filter(city=>city.name===name)
         return (
             <div className="row" key={Data.Id}>
         
@@ -16,7 +18,7 @@ export class Businesses extends Component {
             <ul className="image_flex" >
             {weatherInfo.info.map(business=>
                 <div className=" " key={business.id}>
-                <div className="business-box" key={business.id}>
+                <div className="business-box" key={business.name}>
                 <img src={business.image_url !== ""?   business.image_url : imageBar} alt={business.name}/>
                 <div className="list_style">
                 <li >{business.name}</li>
