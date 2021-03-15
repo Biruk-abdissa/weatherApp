@@ -36,7 +36,7 @@ class App extends Component {
 
   getData = async (e) => {
     await axios
-        .post('http://localhost:3002/city',{
+        .post('https://git.heroku.com/mysterious-anchorage-05229/city',{
           
         city: this.state.city
       })
@@ -60,7 +60,7 @@ class App extends Component {
    
     componentDidMount() {
       axios
-        .get('http://localhost:3002/cities')
+        .get('https://git.heroku.com/mysterious-anchorage-05229/cities')
       
         .then((response) => {
           // console.log(response)
